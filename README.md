@@ -28,6 +28,13 @@ sudo bash cleanup_antivirus.sh
 # 進階用法（結合其他工具）
 watch -n 3600 cleanup_antivirus.sh  # 每小時自動執行
 ```
+### ⚙️ 自定義參數
+```bash
+# 編輯腳本調整以下設定（建議位置：第32-37行）
+SCAN_PATH="/home /etc"  # 限定掃描範圍
+EXCLUDE_DIRS="--exclude-dir=.git --exclude-dir=node_modules"  # 添加排除目錄
+RETENTION_DAYS=14  # 日誌保留天數
+```
 ### 🔬 病毒掃描模組
 ```bash
 # 特徵庫更新機制
