@@ -47,6 +47,7 @@ clamscan -r -i --exclude-dir=/proc /
 - 推薦掃描時段：`22:00 - 06:00`
 - 最小化終端操作避免干擾
 - SSD用戶建議啟用`ionice`優先級調整
+
 結果解讀：
 
 ✅ SCAN_RESULT=0：系統安全
