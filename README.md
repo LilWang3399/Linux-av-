@@ -34,3 +34,23 @@ watch -n 3600 cleanup_antivirus.sh  # 每小時自動執行
 freshclam --quiet  # 靜默模式更新
 # 掃描指令範例
 clamscan -r -i --exclude-dir=/proc /
+```
+
+### ⚠️ 重要注意事項
+資源消耗：
+
+- 首次運行將安裝ClamAV（約佔500MB空間）
+
+- 全盤掃描時CPU使用率可能達70-90%
+
+掃描建議：
+- 推薦掃描時段：`22:00 - 06:00`
+- 最小化終端操作避免干擾
+- SSD用戶建議啟用`ionice`優先級調整
+結果解讀：
+
+✅ SCAN_RESULT=0：系統安全
+
+🟡 SCAN_RESULT=1：發現威脅（查看日誌/var/log/clean_scan_*.log）
+
+🔴 SCAN_RESULT>=2：掃描過程發生錯誤
